@@ -1,5 +1,7 @@
 {
     "name": "fanyigou/api-sdk-php",
+    "description": "翻译狗开放平台SDK-php",
+    "license": "MIT",
     "require": {
         "php": ">=7.1.0",
         "ext-curl": "*",
