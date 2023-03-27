@@ -32,7 +32,7 @@ class Api
     /**
      * @param string $method
      * @param array $params
-     * @param $filePath
+     * @param string $filePath
      * @return mixed
      * @throws DispatchException
      */

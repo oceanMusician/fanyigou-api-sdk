@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="979b9b3c-5297-40c1-a43e-ebff15f26c21" name="变更" comment="" />
+    <list default="true" id="979b9b3c-5297-40c1-a43e-ebff15f26c21" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Api.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +71,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2NS7YMllAJH4gJVImTY5gqfoIhu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -77,13 +84,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/usr/local/var/www/fanyigou-sdk-test/demo",
+    "last_opened_file_path": "/usr/local/var/www/fanyigou-sdk",
     "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/demo" />
       <recent name="$PROJECT_DIR$/demo/file" />
       <recent name="$PROJECT_DIR$/src" />
@@ -104,6 +112,7 @@
       <workItem from="1679649917654" duration="5260000" />
       <workItem from="1679738076040" duration="101000" />
       <workItem from="1679738188035" duration="17507000" />
+      <workItem from="1679905735159" duration="494000" />
     </task>
     <servers />
   </component>
