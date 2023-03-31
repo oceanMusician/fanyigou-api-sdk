@@ -5,7 +5,7 @@
 * cURL extension
 ### 安装方法
 ```php
-composer require aliyuncs/oss-sdk-php
+composer require fanyigou/api-sdk-php
 ```
 ### 快速使用
 ##### 文件上传
