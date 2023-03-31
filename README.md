@@ -4,7 +4,7 @@
 * PHP 7.1+
 * cURL extension
 ### 安装方法
-
+在项目的根目录运行composer require aliyuncs/oss-sdk-php
 ### 快速使用
 ##### 文件上传
 ```php
