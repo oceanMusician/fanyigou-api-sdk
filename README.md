@@ -2,7 +2,7 @@
 
 ### 运行环境
 * PHP 7.1+
-* CURL extension
+* cURL extension
 ### 安装方法
 
 ### 快速使用
