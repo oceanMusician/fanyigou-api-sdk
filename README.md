@@ -1,13 +1,18 @@
 ## PHP-SDK
 
-### 运行环境
+### 环境说明
 * PHP 7.1+
 * cURL extension
-### 安装方法
+### 操作步骤
+* 使用Composer来管理项目依赖项，请在项目的根目录中运行以下命令：
 ```php
 composer require fanyigou/api-sdk-php
 ```
-### 快速使用
+* 在Composer依赖管理器安装完成后，在您的PHP代码中导入该依赖项：
+```php
+  require_once __DIR__ . '/vendor/autoload.php';
+```
+### 示例代码
 ##### 文件上传
 ```php
 <?php
