@@ -15,8 +15,12 @@ $secKey = '';
 
 $dispatch = new Dispatch(['app_key' => $appKey, 'sec_key' => $secKey]);
 
+$params   = [
+    'type' => '1', //资源包类型 1.文档翻译 2.文字翻译 3.图片翻译 4.格式转换
+];
+
 try {
-    $result = $dispatch->getAccount();
+    $result = $dispatch->getAccount($params);
     print_r($result);
 } catch (DispatchException $e) {
     print_r($e->getMessage());

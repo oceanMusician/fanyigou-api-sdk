@@ -46,13 +46,14 @@ class Trans extends Api
 
     /**
      * 上传文件检测页数
+     * @param array $params
      * @param string $filePath
-     * @return mixed
+     * @return mixed|null
      * @throws DispatchException
      */
-    public function detectDocPage(string $filePath)
+    public function detectDocPage(array $params, string $filePath)
     {
-        return $this->request('detectDocPage', [], $filePath);
+        return $this->request('detectDocPage', $params, $filePath);
     }
 
     /**
@@ -83,9 +84,9 @@ class Trans extends Api
      * @return mixed
      * @throws DispatchException
      */
-    public function getAccount()
+    public function getAccount(array $params)
     {
-        return $this->request('getAccount');
+        return $this->request('getAccount', $params);
     }
 
     /**
@@ -131,5 +132,82 @@ class Trans extends Api
     public function downloadImage(array $params)
     {
         return $this->request('image/downloadImage', $params);
+    }
+
+    /**
+     * OCR(图像识别)
+     * @param array $params
+     * @param string $filePath
+     * @return mixed
+     * @throws DispatchException
+     */
+    public function ocrUploadImage(array $params, string $filePath)
+    {
+        return $this->request('image/ocrUploadImage', $params, $filePath);
+    }
+
+    /**
+     * 词典
+     * @param array $params
+     * @return mixed
+     * @throws DispatchException
+     */
+    public function dictSearch(array $params)
+    {
+        return $this->request('dict/search', $params);
+    }
+
+    /**
+     * 语音识别获取链接标识接口
+     * @param array $params
+     * @return mixed
+     * @throws DispatchException
+     */
+    public function getConnectionId(array $params)
+    {
+        return $this->request('voice/online/getConnectionId', $params);
+    }
+
+    /**
+     * 获取译文音频链接接口
+     * @param array $params
+     * @return mixed
+     * @throws DispatchException
+     */
+    public function getTransAudioLink(array $params)
+    {
+        return $this->request('voice/online/getTransAudioLink', $params);
+    }
+
+    /**
+     * 音频文件上传接口
+     * @param array $params
+     * @param $voicePath
+     * @return mixed|null
+     * @throws DispatchException
+     */
+    public function voiceAudioUpload(array $params, $voicePath)
+    {
+        return $this->request('voice/audio/upload', $params, '', $voicePath);
+    }
+
+    /**
+     * @param array $params
+     * @return mixed|null
+     * @throws DispatchException
+     */
+    public function voiceAudioQueryProgress(array $params)
+    {
+        return $this->request('voice/audio/queryProgress', $params);
+    }
+
+    /**
+     * @param array $params
+     * @return mixed|null
+     * @throws DispatchException
+     */
+    public function voiceAudioDownload(array $params)
+    {
+        return $this->request('voice/audio/download', $params);
     }
 }

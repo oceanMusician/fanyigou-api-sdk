@@ -33,10 +33,11 @@ class Api
      * @param string $method
      * @param array $params
      * @param string $filePath
-     * @return mixed
+     * @param string $voicePath
+     * @return mixed|null
      * @throws DispatchException
      */
-    public function request(string $method, array $params = [], string $filePath = '')
+    public function request(string $method, array $params = [], string $filePath = '', string $voicePath = '')
     {
         $params = array_merge($params, [
             'appid'      => $this->appKey,
@@ -44,19 +45,24 @@ class Api
             'nonce_str'  => (string)time(),
         ]);
 
-        if ($filePath !== '') {
+        if (!empty($filePath)) {
             $params['md5'] = md5_file($filePath);
         }
         $params['token'] = $this->signature($params);
 
-        if ($filePath !== '') {
+        if (!empty($filePath)) {
             $params['file'] = new \CURLFile(realpath($filePath));
+        }
+
+        if (!empty($voicePath)) {
+            $params['file'] = new \CURLFile(realpath($voicePath));
         }
 
         $curl = new Curl();
         $curl->post(self::URL . $method, $params);
 
-        if (stripos($curl->responseHeaders['content-type'], 'application/octet-stream') !== false) {
+        if (isset($curl->responseHeaders['content-type'])
+            && stripos($curl->responseHeaders['content-type'], 'application/octet-stream') !== false) {
             return $curl->response; // 直接返回文件流
         }
 
@@ -80,13 +86,22 @@ class Api
     }
 
     /**
-     * @param $result
+     * @param array $result
      * @throws DispatchException
      */
-    private function checkErrorAndThrow($result)
+    private function checkErrorAndThrow(array $result)
     {
-        if (!$result || !in_array($result['code'], [0,100])) {
-            throw new DispatchException($result['msg'], $result['code']);
+        if (isset($result['status']) && $result['status'] == 500) {
+            $errorMessage = $result['message'] ?? '';
+            $errorCode = $result['status'];
+            throw new DispatchException($errorMessage, $errorCode);
+        }
+
+        $validCodes = [0, 100];
+        if (isset($result['code']) && !in_array($result['code'], $validCodes)) {
+            $errorMessage = $result['msg'] ?? '';
+            $errorCode = $result['code'];
+            throw new DispatchException($errorMessage, $errorCode);
         }
     }
 }

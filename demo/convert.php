@@ -17,10 +17,10 @@ $dispatch = new Dispatch(['app_key' => $appKey, 'sec_key' => $secKey]);
 
 $filePath = __DIR__.'/file/1746-5354-8-1-53.pdf'; //文档路径
 
-$params = array(
+$params = [
     'from' => 'en', // 扫描件需设置语言
     'conversionFormat' => -1 // 文档转换类型
-);
+];
 
 try {
     $result = $dispatch->convert($params, $filePath);

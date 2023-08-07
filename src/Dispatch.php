@@ -12,17 +12,24 @@ namespace Fanyigou\ApiSdkPhp;
  * @method array uploadTranslate($params, $filePath)
  * @method array downloadFile($params)
  * @method array queryTransProgress($params)
- * @method array detectDocPage($filePath)
+ * @method array detectDocPage($params, $filePath)
  * @method array submitForDetectDoc($params)
  * @method array convert($params, $filePath)
- * @method array getAccount()
+ * @method array getAccount($params)
  * @method array uploadTranslateImage($params, $filePath)
  * @method array queryImageTransProgress($params)
  * @method array downloadImage($params)
+ * @method array ocrUploadImage($params, $filePath)
+ * @method array dictSearch($params)
+ * @method array getConnectionId($params)
+ * @method array getTransAudioLink($params)
+ * @method array voiceAudioUpload($params, $voicePath)
+ * @method array voiceAudioQueryProgress($params)
+ * @method array voiceAudioDownload($params)
  */
 class Dispatch
 {
-    private $trans;
+    private Trans $trans;
 
     public function __construct($config)
     {
