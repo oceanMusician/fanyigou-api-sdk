@@ -10,7 +10,7 @@ composer require fanyigou/api-sdk-php
 ```
 * 在Composer依赖管理器安装完成后，在您的PHP代码中导入该依赖项：
 ```php
-  require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 ```
 ### 示例代码
 ##### 文件上传

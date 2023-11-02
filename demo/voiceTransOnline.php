@@ -4,10 +4,13 @@
 1.语音识别获取链接标识接口与当前的websocket传入的appid必须一致
 2.connectionId的只有二十分钟有效期
 3.connenctionId连接成功并发送音频数据后不能再使用当前connectionId进行二次连接
- * getTransAudioLink.php
+ * voiceTransOnline.php
  * Create on 2023/3/24 17:51
  * Create by lihailiang@fanyigou.com
  */
+
+ini_set("max_execution_time", "300");
+
 include_once __DIR__.'/../vendor/autoload.php';
 
 use Fanyigou\ApiSdkPhp\WebSocket;
